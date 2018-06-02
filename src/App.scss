@@ -1,0 +1,89 @@
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("./poster.jpg");
+  background-size: cover;
+}
+
+.heading {
+  position: absolute;
+  padding: 100px;
+  border-radius: 20px;
+  text-align: center;
+  background: #ffffffc2;
+  &:after {
+    position: absolute;
+    bottom: 50px;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-right: 10px solid black;
+    border-bottom: 10px solid black;
+    border-radius: 6px;
+    transform: rotate(45deg) translate(-20px, 20px);
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: jump;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 80px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 50px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 50px;
+  }
+
+  50% {
+       bottom: 40px;
+     }
+
+  100% {
+    bottom: 50px;
+  }
+}
+
+.race-track {
+  position: relative;
+  width: 100%;
+  background-color: #b1b1b1;
+  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=c7c7c700&noise=626262&density=41&opacity=32');
+}
+
+.lane {
+  width: 100%;
+  height: 200px;
+  border-top: 10px groove white;
+  border-bottom: 10px groove white;
+  .number {
+    position: relative;
+    display: table;
+    top: 50%;
+    left: 200px;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: #fff;
+  }
+}
+
+.finish-line {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 60px;
+  height: 100%;
+  background-color: #eee;
+  background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}

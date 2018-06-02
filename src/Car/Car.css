@@ -1,0 +1,28 @@
+.car {
+  position: relative;
+  left: 10px;
+  width: 145px;
+  height: 35px; }
+  .car .body {
+    width: 100%;
+    height: 100%;
+    background: red; }
+  .car .wheel {
+    position: absolute;
+    bottom: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: yellow; }
+    .car .wheel.left {
+      left: 10px; }
+    .car .wheel.right {
+      right: 10px; }
+  .car .trapezoid {
+    position: absolute;
+    top: -35px;
+    left: 30px;
+    height: 0;
+    width: 35px;
+    border-bottom: 35px solid red;
+    border-right: 30px solid transparent; }
