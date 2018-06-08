@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './Animate.css';
 
 class Animate extends Component {
     constructor(props) {
         super(props);
+        this.myRef = React.createRef();
         this.onScroll = this.onScroll.bind(this);
         this.addAnimatingStyles = this.addAnimatingStyles.bind(this);
         this.state = {
-            rect: {},
+            position: {},
             isAnimated: false,
             animatingStyles: {}
         }
@@ -16,7 +16,7 @@ class Animate extends Component {
 
     render() {
         return (
-            <div className="animation-wrapper" style={this.state.animatingStyles}>
+            <div className="animation-wrapper" style={this.state.animatingStyles} ref={this.myRef}>
                 {this.props.children}
             </div>
         );
@@ -28,10 +28,10 @@ class Animate extends Component {
 
     onScroll() {
         this.setState({
-            rect: ReactDOM.findDOMNode(this).getBoundingClientRect()
+            position: this.myRef.current.getBoundingClientRect()
         });
 
-        if ((this.state.rect.top < window.innerHeight) && !this.state.isAnimated) {
+        if ((this.state.position.top < window.innerHeight) && !this.state.isAnimated) {
             this.setState({ isAnimated: true });
             this.addAnimatingStyles();
         }
