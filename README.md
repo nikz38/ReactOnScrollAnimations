@@ -3,7 +3,7 @@
 A simple app that demonstrates animations that are triggered on user scrolling once the animating element is in the viewport.
 
 **Requirements**
-node -v >10.0.0
+node -v 10+
 
 <dl>
   <dt>To run this app:</dt>
