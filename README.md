@@ -11,5 +11,5 @@ node -v 10+
   <dd>clone this repository</dd>
   <dd>npm install</dd>
   <dd>npm start</dd>
-  <dd>Your app should open at http://localhost:3000</dd>
+  <dd>Your app should open at <a href="http://localhost:3000">http://localhost:3000</dd>
 </dl>
