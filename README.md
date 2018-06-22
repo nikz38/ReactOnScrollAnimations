@@ -30,18 +30,19 @@ Animation will be trigered once the element is in the viewport.
 ## Settings
 
 These are the props that can be passed for animation:
-| Attribute | Type |
-|---------------|-------|
-| *`transform`* | string |
-| *`transformOrigin`* | string |
-| *`transitionDuration`* | number |
-| *`transitionTimingFunction`* | string |
-| *`transitionDelay`* | string |
-| *`opacity`* | number |
-| *`marginRight`* | string |
-| *`marginLeft`* | string |
-| *`width`* | string |
-| *`height`* | string |
+
+| Attribute | Type | 
+|----------------------|----------|
+| transform | string |
+| transformOrigin | string |
+| transitionDuration | number |
+| transitionTimingFunction | string |
+| transitionDelay | string |
+| opacity | number |
+| marginRight | string |
+| marginLeft | string |
+| width | string |
+| height | string |
 
 ## Example
 
