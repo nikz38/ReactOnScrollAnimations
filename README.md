@@ -31,7 +31,7 @@ Animation will be trigered once the element is in the viewport.
 
 These are the props that can be passed for animation:
 | Attribute | Type |
-|---------------------------|-------------|
+|---------------|-------|
 | *`transform`* | string |
 | *`transformOrigin`* | string |
 | *`transitionDuration`* | number |
