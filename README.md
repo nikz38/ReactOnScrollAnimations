@@ -2,7 +2,7 @@
 
 A simple app that demonstrates animations that are triggered on user scrolling once the animating element is in the viewport.
 
-You can view the demo <a href="https://cod34fun.com/animate-on-scroll-with-ract-js/">here</a>
+<a href="https://cod34fun.com/animate-on-scroll-with-ract-js/">Link to the article where it is explained how to build this app</a>.
 
 **Requirements**
 node -v 10+
