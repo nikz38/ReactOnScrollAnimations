@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Animate.css';
 
 class Animate extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            position: {},
+            animatingStyles: {}
+        };
+
         this.myRef = React.createRef();
         this.onScroll = this.onScroll.bind(this);
         this.addAnimatingStyles = this.addAnimatingStyles.bind(this);
-        this.state = {
-            position: {},
-            isAnimated: false,
-            animatingStyles: {}
-        }
     }
 
-    render() {
-        return (
-            <div className="animation-wrapper" style={this.state.animatingStyles} ref={this.myRef}>
-                {this.props.children}
-            </div>
-        );
-    }
+    isAnimated = false;
 
     componentDidMount() {
         window.addEventListener('scroll', this.onScroll);
@@ -31,9 +26,10 @@ class Animate extends Component {
             position: this.myRef.current.getBoundingClientRect()
         });
 
-        if ((this.state.position.top < window.innerHeight) && !this.state.isAnimated) {
-            this.setState({ isAnimated: true });
+        if ((this.state.position.top < window.innerHeight) && !this.isAnimated) {
             this.addAnimatingStyles();
+            this.isAnimated = true;
+            window.removeEventListener('scroll', this.onScroll);
         }
     }
 
@@ -55,6 +51,27 @@ class Animate extends Component {
             }
         })
     }
+
+    render() {
+        return (
+            <div className='animation-wrapper' style={this.state.animatingStyles} ref={this.myRef}>
+                {this.props.children}
+            </div>
+        )
+    }
 }
+
+Animate.propTypes = {
+    transform: PropTypes.string,
+    transformOrigin: PropTypes.string,
+    transitionDuration: PropTypes.number,
+    transitionTimingFunction: PropTypes.string,
+    transitionDelay: PropTypes.string,
+    opacity: PropTypes.number,
+    marginRight: PropTypes.string,
+    marginLeft: PropTypes.string,
+    width: PropTypes.string,
+    height: PropTypes.string,
+};
 
 export default Animate;
